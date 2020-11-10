@@ -1348,7 +1348,7 @@ function normalizeKeyValue(evt) {
         return "-";
     }
     else if (evt.key === "Separator") {
-        // this is incorrect for some locales, but 
+        // this is incorrect for some locales, but
         // this is a deprecated value that is fixed in
         // modern browsers, so it shouldn't come up
         // very often.
@@ -2972,6 +2972,7 @@ class Primrose extends EventTarget {
                 this.dispatchEvent(updateEvt);
             }
         };
+        this.doRender = doRender;
         //<<<<<<<<<< RENDERING <<<<<<<<<<
 
         const refreshControlType = () => {
@@ -3797,7 +3798,7 @@ class Primrose extends EventTarget {
         };
 
 
-        //>>>>>>>>>> MOUSE EVENT HANDLERS >>>>>>>>>> 
+        //>>>>>>>>>> MOUSE EVENT HANDLERS >>>>>>>>>>
         const setMousePointer = (evt) => {
             pointer.set(
                 evt.offsetX,
@@ -4061,7 +4062,7 @@ class Primrose extends EventTarget {
             },
 
             /// <summary>
-            /// The range of text that is currently selected by the cursor. If no text is selected, reading `selectedText` returns the empty string (`""`) and writing to it inserts text at the current cursor location. 
+            /// The range of text that is currently selected by the cursor. If no text is selected, reading `selectedText` returns the empty string (`""`) and writing to it inserts text at the current cursor location.
             /// If text is selected, reading `selectedText` returns the text between the front and back cursors, writing to it overwrites the selected text, inserting the provided value.
             /// </summary>
             selectedText: {
@@ -4476,7 +4477,7 @@ class Primrose extends EventTarget {
         };
         doRender();
 
-        // This is done last so that controls that have errored 
+        // This is done last so that controls that have errored
         // out during their setup don't get added to the control
         // manager.
         Primrose.add(element, this);
@@ -4503,7 +4504,7 @@ Primrose.add = (key, control) => {
         });
 
         control.addEventListener("focus", () => {
-            // make sure the previous control knows it has 
+            // make sure the previous control knows it has
             // gotten unselected.
             if (focusedControl !== null
                 && (!focusedControl.isInDocument
